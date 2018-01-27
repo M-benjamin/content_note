@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Home page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Default style -->
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head class="text-center">
+
+<body>
+  <div class="container d-flex h-100 p-3 mx-auto flex-column">
+    <!--====== HEADER ============================================-->
+    <div id="header">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand"><i class="fa fa-archive" aria-hidden="true"></i> Note Manager</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="/">Home</a>
+            <a class="nav-link" href="/notes">Notes</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <!--====== END HEADER ============================================-->
+
+    <!--====== INFORMATION ============================================-->
+    <div id="information">
+      <main>
+        <div class="col-md-10">
+          <h4 class="mb-3">Veuillez saisir vos informations :</h4>
+          <hr class="mb-4">
+          <form method="post" action="/">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Nom :</label>
+                <input name="firstname" type="text" class="form-control" id="firstName" placeholder="Votre nom"value="">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Prénom :</label>
+                <input type="text" class="form-control"  placeholder="Votre prenom" name="lastname" value="">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="username">Matière : </label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Votre matiere" name="matiere">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="note">Note :</label>
+              <input type="number" class="form-control"  name="note" placeholder="Votre note">
+            </div>
+
+            <input  type="submit" class="btn btn-outline-primary"value="Valider"/>
+          </form>
+        </div>
+    </div>
+    </main>
+  </div>
+  <!--====== END INFORMATION ============================================-->
+
+  <!--====== FOOTER ============================================-->
+  <div id="footer">
+    <footer class="mastfoot mt-auto">
+      <!-- <div class="inner">
+        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      </div> -->
+    </footer>
+  </div>
+  <!--====== END FOOTER  ============================================-->
+  </div>
+  <!-- END cover-container -->
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Home page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Default style -->
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head class="text-center">
+
+<body>
+  <div class="container d-flex h-100 p-3 mx-auto flex-column">
+    <!--====== HEADER ============================================-->
+    <div id="header">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand"><i class="fa fa-archive" aria-hidden="true"></i> Note Manager</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link active" href="/notes">Notes</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <!--====== END HEADER ============================================-->
+
+    <!--====== NOTES ============================================-->
+    <div id="notes">
+      <main role="main">
+        <div class="col-md-10">
+          <h4 class="mb-3">Liste des notes et matières :</h4>
+          <hr class="mb-4">
+
+          <div class="row mb">
+            <div class="col-md-5">
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+            <!-- End col-md-5 -->
+            <div class="col-md-7">
+              <% data.forEach(function(d){ %>
+                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                  <div class="card-body d-flex flex-column align-items-start">
+
+                    <h3 class="mb-0">
+                    <a class="text-dark" href="#"><%- d.firstname + " " + d.lastname  %></a>
+                  </h3>
+                    <div class="mb-1 text-muted">Matière:
+                      <%- d.matiere %>
+                    </div>
+                    <strong class="d-inline-block text-primary">Note: <%- d.note %> / 20</strong>
+
+                    <div class="row btnG">
+                      <div class="col-md-6">
+                        <a href="/notes/update/<%- d.id %>" class="btn btn-outline-info btn-sm">Update
+                        </a>
+                      </div>
+                      <div class="col-md-6 btn-del">
+                        <a href="/notes/delete/<%- d.id %>" class="btn btn-outline-danger btn-sm">Delete</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--=============== Modal ====================-->
+                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Mise à jour des informations: </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form method="post" action="/notes">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Nouvelle matière: </label>
+                            <input type="email" class="form-control" placeholder="Enter matière">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Nouvelle note: </label>
+                            <input type="number" class="form-control" placeholder="Entrer note">
+                          </div>
+                          <input type="submit" class="btn btn-outline-info" value="Valider"/>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--=================== End modal ================-->
+                <% }); %>
+
+
+            </div>
+            <!-- End col-md-7 -->
+          </div>
+          <!-- End row -->
+          <div class="row">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- End row pagination -->
+        </div>
+        <!-- END col-md-10 -->
+      </main>
+    </div>
+    <!--====== END NOTES ============================================-->
+
+    <!--====== FOOTER ============================================-->
+    <div id="footer">
+      <footer class="mastfoot mt-auto">
+
+      </footer>
+    </div>
+    <!--====== END FOOTER  ============================================-->
+  </div>
+  <!-- END cover-container -->
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="/js/main.js">
+  </script>
+</body>
+
+</html>
