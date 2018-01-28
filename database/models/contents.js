@@ -1,4 +1,6 @@
-
+/**============================================
+ * Creation of table in database
+ =============================================*/
 module.exports = (sequelize, DataTypes) => {
 
     let contents = sequelize.define('contents', {
@@ -18,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         }
-
     })
 
     return contents;

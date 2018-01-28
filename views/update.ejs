@@ -47,16 +47,16 @@
               </div>
             </div> -->
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="username">Matière : </label>
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="<%= matiere %>" name="matiered">
+                <input type="text" required class="form-control" placeholder="<%= matiere %>" name="matiered">
               </div>
-            </div>
+            </div> -->
 
             <div class="mb-3">
               <label for="note">Note :</label>
-              <input type="number" class="form-control"  name="noted" placeholder="<%= note %>">
+              <input type="number" class="form-control"  name="noted" placeholder="<%= note %>" min="0" max="20" required>
             </div>
 
             <input  type="submit" class="btn btn-outline-success" value="Update"/>

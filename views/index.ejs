@@ -28,7 +28,7 @@
       </header>
     </div>
     <!--====== END HEADER ============================================-->
-
+    
     <!--====== INFORMATION ============================================-->
     <div id="information">
       <main>
@@ -39,24 +39,24 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">Nom :</label>
-                <input name="firstname" type="text" class="form-control" id="firstName" placeholder="Votre nom"value="">
+                <input name="firstname" required type="text" class="form-control" id="firstName" placeholder="Votre nom"value="">
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Prénom :</label>
-                <input type="text" class="form-control"  placeholder="Votre prenom" name="lastname" value="">
+                <input required type="text" class="form-control"  placeholder="Votre prenom" name="lastname" value="">
               </div>
             </div>
 
             <div class="mb-3">
               <label for="username">Matière : </label>
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Votre matiere" name="matiere">
+                <input required type="text" class="form-control" placeholder="Votre matiere" name="matiere">
               </div>
             </div>
 
             <div class="mb-3">
               <label for="note">Note :</label>
-              <input type="number" class="form-control"  name="note" placeholder="Votre note">
+              <input required type="number" class="form-control"  name="note" placeholder="Votre note" min="0" max="20">
             </div>
 
             <input  type="submit" class="btn btn-outline-primary"value="Valider"/>

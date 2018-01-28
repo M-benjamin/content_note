@@ -22,7 +22,6 @@ router.get('/', (req, res) => {
  ==============================*/
 router.get('/update/:id', (req, res) => {
   let id = req.params.id;
-
   db.contents.findOne({ where: { id: id} }).then(data => {
         res.render('update', {
             id: data.id,
@@ -61,7 +60,9 @@ router.post('/update/:id', (req, res) => {
         res.status(204);
       }
   });
+  
   res.render('index');
+
 });
 
 /**============================
@@ -99,7 +100,5 @@ router.post('/delete/:id', (req, res) => {
 
 });
 
-
-
-
+// -----------------------------------------------------
 module.exports = router;

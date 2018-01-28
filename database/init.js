@@ -6,7 +6,7 @@ let db = {};
 
 const config = require(path.join(__dirname, 'config.json'));
 
-//configuration of my database
+// -> Configuration of my database
 db.sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
     dialect: config.dialect

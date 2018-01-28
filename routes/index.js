@@ -19,8 +19,7 @@ router.post('/', (req, res) => {
     note: req.body.note
   }
 
-  console.log(data);
-
+  // console.log(data);
   db.contents.create(data).then(dataU => {
     res.redirect('/notes');
   }).catch(error => {
@@ -30,4 +29,5 @@ router.post('/', (req, res) => {
 
 });
 
+// ------------------------------------------------------
 module.exports = router;
